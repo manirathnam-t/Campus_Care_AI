@@ -224,7 +224,7 @@ document.addEventListener("DOMContentLoaded", () => {
   async function api(path, options = {}) {
     const headers = { "Content-Type": "application/json", ...(options.headers || {}) };
     if (authToken) headers.Authorization = `Bearer ${authToken}`;
-    const response = await fetch(`${API}${path}`, { ...options, headers });
+    const response = await fetch(`${API_URL}${path}`, { ...options, headers });
     const data = await response.json().catch(() => ({}));
     if (!response.ok) throw new Error(data.error || `Request failed (${response.status})`);
     return data;
