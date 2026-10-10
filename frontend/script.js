@@ -219,7 +219,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const state = { complaints: [], reviews: {} };
   let currentUser = readFromStorage(STORAGE_KEYS.user, null);
   let authToken = localStorage.getItem("campuscare_token") || "";
-  const API = "http://localhost:3000/api";
+  const API_URL = "https://campus-care-ai-ndhh.onrender.com";
 
   async function api(path, options = {}) {
     const headers = { "Content-Type": "application/json", ...(options.headers || {}) };
