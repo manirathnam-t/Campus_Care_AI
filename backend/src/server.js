@@ -12,7 +12,7 @@ if (!process.env.JWT_SECRET || process.env.JWT_SECRET.length < 32) {
 }
 const app = express();
 app.disable("x-powered-by");
-app.use(cors({ origin: process.env.FRONTEND_ORIGIN || "http://127.0.0.1:5500" }));
+app.use(cors({ origin: process.env.FRONTEND_ORIGIN || "https://campuscareai-frontend.vercel.app/" }));
 app.use(express.json({ limit: "1mb" }));
 app.use("/api/auth", rateLimit({ windowMs: 15 * 60 * 1000, limit: 30 }), authRoutes);
 app.use("/api/complaints", rateLimit({ windowMs: 15 * 60 * 1000, limit: 120 }), complaintRoutes);
