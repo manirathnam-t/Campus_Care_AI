@@ -12,7 +12,21 @@ if (!process.env.JWT_SECRET || process.env.JWT_SECRET.length < 32) {
 }
 const app = express();
 app.disable("x-powered-by");
-app.use(cors({ origin: process.env.FRONTEND_ORIGIN || "https://campuscareai-frontend.vercel.app/" }));
+const allowedOrigins = [
+  "https://campuscareai-frontend.vercel.app",
+  "http://localhost:5500",
+  "http://127.0.0.1:5500"
+];
+
+app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  }
+}));
 app.use(express.json({ limit: "1mb" }));
 app.use("/api/auth", rateLimit({ windowMs: 15 * 60 * 1000, limit: 30 }), authRoutes);
 app.use("/api/complaints", rateLimit({ windowMs: 15 * 60 * 1000, limit: 120 }), complaintRoutes);
