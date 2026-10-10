@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#172744">
+  <meta name="description" content="CampusCare AI – private, intelligent campus complaint management.">
+  <title>CampusCare AI | Your Voice Builds a Better Campus</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- SVG icons, referenced elsewhere with <use href="#i-name"> -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></symbol>
+      <symbol id="i-zap" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+      <symbol id="i-activity" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></symbol>
+      <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+      <symbol id="i-list" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></symbol>
+      <symbol id="i-user" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+      <symbol id="i-logout" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></symbol>
+      <symbol id="i-chart" viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></symbol>
+      <symbol id="i-repeat" viewBox="0 0 24 24"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></symbol>
+      <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+      <symbol id="i-upload" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></symbol>
+      <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><path d="M12 9v4M12 17h.01"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></symbol>
+      <symbol id="i-arrow-left" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></symbol>
+      <symbol id="i-arrow-right" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></symbol>
+      <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+      <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/></symbol>
+      <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></symbol>
+      <symbol id="i-droplet" viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></symbol>
+      <symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94z"/></symbol>
+      <symbol id="i-more" viewBox="0 0 24 24"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></symbol>
+    </defs>
+  </svg>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <!-- Page 1: Home -->
+  <section id="home-page" class="page home-page">
+    <header class="landing-nav">
+      <a class="brand" href="#" data-go="home-page" aria-label="CampusCare AI home">
+        <span class="brand-icon"><svg class="icon"><use href="#i-heart"/></svg></span>
+        <span>CampusCare<span class="brand-ai"> AI</span></span>
+      </a>
+      <nav class="landing-links" aria-label="Main navigation">
+        <button class="btn btn-outline" data-go="login-page">Login</button>
+        <button class="btn btn-primary" data-go="login-page">Get Started <svg class="icon"><use href="#i-arrow-right"/></svg></button>
+      </nav>
+    </header>
+
+    <main>
+      <div class="hero section-wrap">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="live-dot"></span> PRIVATE · INTELLIGENT · TRANSPARENT</div>
+          <h1>Your Voice Builds a <span>Better Campus</span></h1>
+          <p class="hero-description">Report Wi-Fi outages, broken equipment, leaks and more privately. CampusCare AI groups similar complaints, flags problems that keep coming back, and keeps you updated until the fix is confirmed.</p>
+          <div class="hero-actions">
+            <button class="btn btn-primary btn-large" data-go="login-page">Get Started <svg class="icon"><use href="#i-arrow-right"/></svg></button>
+            <button class="btn btn-outline btn-large" data-go="login-page">Login</button>
+          </div>
+        </div>
+
+        <div class="hero-visual" role="img" aria-label="Illustration of a college campus">
+          <div class="visual-orb orb-one"></div><div class="visual-orb orb-two"></div>
+          <div class="campus-illustration">
+            <div class="sun"></div><div class="cloud cloud-one"></div><div class="cloud cloud-two"></div>
+            <div class="tree tree-left"><span></span><i></i></div>
+            <div class="tree tree-right"><span></span><i></i></div>
+            <div class="ground"></div>
+            <div class="building">
+              <div class="roof"></div>
+              <div class="building-top"><span></span><span></span><span></span><span></span><span></span></div>
+              <div class="building-body">
+                <div class="window-row"><i></i><i></i><i></i><i></i></div>
+                <div class="window-row"><i></i><i></i><i></i><i></i></div>
+                <div class="entrance"><span></span></div>
+              </div>
+            </div>
+            <div class="floating-note note-one"><span><svg class="icon"><use href="#i-check"/></svg></span><div><strong>Issue resolved</strong><small>Campus care in action</small></div></div>
+            <div class="floating-note note-two"><span><svg class="icon"><use href="#i-shield"/></svg></span><div><strong>Your identity is safe</strong><small>Private by design</small></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="features" class="feature-strip section-wrap">
+        <article class="feature-card">
+          <div class="feature-icon blue"><svg class="icon"><use href="#i-shield"/></svg></div>
+          <h3>Private &amp; Secure</h3>
+          <p>Your identity stays protected. Only the assigned team can see what you report.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon purple"><svg class="icon"><use href="#i-zap"/></svg></div>
+          <h3>AI-Powered Detection</h3>
+          <p>Similar complaints are grouped automatically so repeat problems get noticed early.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon green"><svg class="icon"><use href="#i-activity"/></svg></div>
+          <h3>Track &amp; Verify</h3>
+          <p>Follow every step from submission to fix, then confirm the issue is truly resolved.</p>
+        </article>
+      </div>
+    </main>
+
+    <footer class="landing-footer">
+      <a class="brand" href="#" data-go="home-page"><span class="brand-icon"><svg class="icon"><use href="#i-heart"/></svg></span><span>CampusCare<span class="brand-ai"> AI</span></span></a>
+      <p>Creating safer, smarter, more responsive campus communities.</p>
+      <span>© 2026 CampusCare AI · Demo prototype</span>
+    </footer>
+  </section>
+
+  <!-- Page 2: Login -->
+  <section id="login-page" class="page login-page" hidden>
+    <aside class="login-brand-panel">
+      <a class="brand" href="#" data-go="home-page">
+        <span class="brand-icon"><svg class="icon"><use href="#i-heart"/></svg></span>
+        <span>CampusCare<span class="brand-ai"> AI</span></span>
+      </a>
+      <div class="login-message">
+        <div class="eyebrow">YOUR CAMPUS. YOUR VOICE.</div>
+        <h2>A better campus <span>starts with you.</span></h2>
+        <p>Be part of a community where concerns are heard, progress is visible, and every improvement matters.</p>
+        <ul class="check-list">
+          <li><svg class="icon"><use href="#i-check"/></svg> Report issues privately</li>
+          <li><svg class="icon"><use href="#i-check"/></svg> See every update as it happens</li>
+          <li><svg class="icon"><use href="#i-check"/></svg> Confirm when it is really fixed</li>
+        </ul>
+      </div>
+      <p class="panel-caption">A demo prototype for campus issue reporting.</p>
+    </aside>
+
+    <main class="login-form-panel">
+      <button class="back-home" data-go="home-page"><svg class="icon"><use href="#i-arrow-left"/></svg> Back to home</button>
+      <div class="login-form-wrap">
+        <span class="eyebrow">WELCOME TO CAMPUSCARE</span>
+        <h1 id="auth-heading">Student Login</h1>
+        <p class="muted" id="auth-subtitle">Sign in to report an issue or track a request.</p>
+
+        <div class="auth-tabs" role="tablist" aria-label="Login type">
+          <button class="auth-tab active" type="button" role="tab" aria-selected="true" data-auth-role="student">Student Login</button>
+          <button class="auth-tab" type="button" role="tab" aria-selected="false" data-auth-role="admin">Management Login</button>
+        </div>
+
+        <form id="auth-form" novalidate>
+          <label for="auth-email">Email</label>
+          <div class="input-icon"><svg class="icon"><use href="#i-mail"/></svg><input id="auth-email" type="email" placeholder="you@college.edu" autocomplete="email" required></div>
+          <label for="auth-password">Password</label>
+          <div class="input-icon"><svg class="icon"><use href="#i-lock"/></svg><input id="auth-password" type="password" placeholder="Enter your password" autocomplete="current-password" minlength="4" required></div>
+          <div class="auth-row">
+            <span></span>
+            <a href="#" class="text-link" data-action="open-modal" data-modal="forgot">Forgot Password?</a>
+          </div>
+          <button class="btn btn-primary btn-full btn-large" type="submit" id="auth-submit">Login</button>
+        </form>
+        <div class="login-footnote"><svg class="icon"><use href="#i-alert"/></svg><span>Sign in with your CampusCare account. New students can create an account below.</span></div>
+      </div>
+    </main>
+  </section>
+
+  <!-- Page 3: Student Dashboard -->
+  <section id="student-dashboard-page" class="page app-page" hidden>
+    <aside class="sidebar" data-sidebar="student" data-active="dashboard"></aside>
+    <main class="app-main">
+      <header class="app-topbar">
+        <div class="breadcrumbs">CampusCare <span>/</span> Student Dashboard</div>
+        <div class="topbar-actions"><span class="demo-tag">LIVE DATABASE</span>
+          <div class="profile-chip"><span class="profile-avatar user-initial">S</span><span class="user-display-name">Student</span></div>
+        </div>
+      </header>
+      <div class="dashboard-content">
+        <div class="welcome-row">
+          <div>
+            <span class="eyebrow">STUDENT OVERVIEW</span>
+            <h1>Welcome back, <span class="user-first-name">Student</span> 👋</h1>
+            <p>Here is an overview of your campus complaints.</p>
+          </div>
+          <button class="btn btn-primary" data-go="complaint-page" data-new="1"><svg class="icon"><use href="#i-plus"/></svg> Submit New Complaint</button>
+        </div>
+
+        <div id="student-stats" class="stats-grid"></div>
+
+        <section id="my-complaints" class="panel">
+          <div class="panel-heading">
+            <div><h2>Recent Complaints</h2><p>Select a complaint to open its tracking timeline.</p></div>
+          </div>
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead><tr><th scope="col">ID</th><th scope="col">Title</th><th scope="col">Category</th><th scope="col">Date</th><th scope="col">Status</th></tr></thead>
+              <tbody id="student-table"></tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </main>
+  </section>
+
+  <!-- Page 4: Complaint Form & Tracking -->
+  <section id="complaint-page" class="page app-page" hidden>
+    <aside class="sidebar" data-sidebar="student" data-active="new"></aside>
+    <main class="app-main">
+      <header class="app-topbar">
+        <div class="breadcrumbs">CampusCare <span>/</span> Complaint &amp; Tracking</div>
+        <div class="topbar-actions"><span class="demo-tag">LIVE DATABASE</span>
+          <div class="profile-chip"><span class="profile-avatar user-initial">S</span><span class="user-display-name">Student</span></div>
+        </div>
+      </header>
+      <div class="dashboard-content">
+        <div class="welcome-row">
+          <div>
+            <span class="eyebrow">REPORT &amp; FOLLOW UP</span>
+            <h1>New Complaint &amp; Tracking</h1>
+            <p>Tell us what is wrong, then follow it through to resolution.</p>
+          </div>
+          <button class="btn btn-outline" data-go="student-dashboard-page"><svg class="icon"><use href="#i-arrow-left"/></svg> Back to Dashboard</button>
+        </div>
+
+        <div class="complaint-layout">
+          <section class="panel form-panel" id="form-section">
+            <div class="panel-heading"><div><h2>Submit a complaint</h2><p>Fields marked * are required.</p></div><span class="tag">NEW REPORT</span></div>
+            <form id="complaint-form" novalidate>
+              <label for="f-category">Category <span class="required">*</span></label>
+              <select id="f-category" required>
+                <option value="">Select a category</option>
+                <option>Wi-Fi</option><option>Lab Equipment</option><option>Water Supply</option>
+                <option>Electrical</option><option>Maintenance</option><option>Other</option>
+              </select>
+
+              <label for="f-title">Title <span class="required">*</span></label>
+              <input id="f-title" type="text" maxlength="100" placeholder="e.g. Projector not turning on" required>
+
+              <label for="f-description">Description <span class="required">*</span></label>
+              <textarea id="f-description" rows="4" maxlength="1500" placeholder="Describe what happened and when it started" required></textarea>
+
+              <label for="f-location">Campus location <span class="required">*</span></label>
+              <div class="input-icon"><svg class="icon"><use href="#i-pin"/></svg><input id="f-location" type="text" list="location-list" placeholder="e.g. Computer Lab 3" required></div>
+              <datalist id="location-list"><option>Library</option><option>Block A</option><option>Block B</option><option>Computer Lab 1</option><option>Computer Lab 3</option><option>Hostel A</option><option>Hostel Block C</option><option>Canteen</option></datalist>
+
+              <label class="upload-box" for="f-photo">
+                <span class="upload-icon"><svg class="icon"><use href="#i-upload"/></svg></span>
+                <span><strong>Attach a photo <em>(optional)</em></strong><small id="photo-name">PNG or JPG, up to 5 MB</small></span>
+                <input id="f-photo" type="file" accept="image/*">
+              </label>
+
+              <p id="form-error" class="form-error" role="alert" hidden></p>
+              <div class="form-actions">
+                <button type="button" class="btn btn-outline" data-action="cancel-form">Cancel</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+          </section>
+
+          <section class="panel" id="tracking-section" aria-live="polite">
+            <div class="panel-heading">
+              <div><h2>Complaint Details &amp; Tracking</h2><p>Status, timeline and management actions.</p></div>
+              <select id="tracking-select" class="select-compact" aria-label="Choose a complaint to track"></select>
+            </div>
+            <div id="tracking-body"></div>
+          </section>
+        </div>
+      </div>
+    </main>
+  </section>
+
+  <!-- Page 5: Admin Dashboard & Recurring Issues -->
+  <section id="admin-page" class="page app-page" hidden>
+    <aside class="sidebar" data-sidebar="admin" data-active="dashboard"></aside>
+    <main class="app-main">
+      <header class="app-topbar">
+        <div class="breadcrumbs">CampusCare <span>/</span> Management Dashboard</div>
+        <div class="topbar-actions"><span class="demo-tag">LIVE DATABASE</span>
+          <div class="profile-chip"><span class="profile-avatar admin-avatar user-initial">A</span><span class="user-display-name">Admin</span></div>
+        </div>
+      </header>
+      <div class="dashboard-content">
+        <div id="admin-top" class="welcome-row">
+          <div>
+            <span class="eyebrow">CAMPUS OPERATIONS</span>
+            <h1>Admin Dashboard</h1>
+            <p>Review campus complaints, update progress and investigate recurring problems.</p>
+          </div>
+          <button class="btn btn-outline" data-action="export-report"><svg class="icon"><use href="#i-download"/></svg> Export report</button>
+        </div>
+
+        <div id="admin-stats" class="stats-grid"></div>
+
+        <div class="management-grid">
+          <section class="panel">
+            <div class="panel-heading"><div><h2>Complaints by Category</h2><p>Where reports are coming from</p></div><span class="tag">OVERVIEW</span></div>
+            <div id="category-chart" class="category-chart"></div>
+          </section>
+          <section id="all-complaints" class="panel">
+            <div class="panel-heading"><div><h2>All Complaints</h2><p>Select a row to review and update its status.</p></div></div>
+            <div class="table-wrap table-scroll">
+              <table class="data-table compact">
+                <thead><tr><th scope="col">ID</th><th scope="col">Title</th><th scope="col">Category</th><th scope="col">Location</th><th scope="col">Status</th></tr></thead>
+                <tbody id="admin-table"></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+
+        <section id="recurring-section" class="recurring-section">
+          <div class="compact-heading">
+            <div><span class="eyebrow">PATTERN DETECTION</span><h2>Recurring Issues</h2></div>
+            <span class="ai-pill"><svg class="icon"><use href="#i-zap"/></svg> AI-assisted grouping</span>
+          </div>
+          <p class="section-description">Complaints in the same category are grouped automatically. Groups of four or more are flagged for a root cause review. This prototype uses rule-based demo analysis, not a connected AI model.</p>
+          <div id="recurring-grid" class="recurring-grid"></div>
+        </section>
+      </div>
+    </main>
+  </section>
+
+  <!-- One dialog reused for every popup (filled in by script.js) -->
+  <dialog id="modal" class="modal" aria-labelledby="modal-title"></dialog>
+
+</body>
+</html>
